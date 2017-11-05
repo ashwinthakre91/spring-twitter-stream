@@ -48,12 +48,12 @@ public class TwitterCacheServiceImpl implements TwitterCacheService {
     }
 
     private void printCacheWords(){
-        //clear console screen
-        System.out.print("\033[H\033[2J");
         //print cacheWords whose value is greater than 1
         if(cacheWords.size()>0){
+            //clear console screen
+            System.out.print("\033[H\033[2J");
             for (Map.Entry<String,Integer> entry : cacheWords.entrySet()){
-                if (entry.getValue()>=0){
+                if (entry.getValue()>1){
                     System.out.println(entry.getKey());
                     System.out.println("value: "+entry.getValue());
                 }else{

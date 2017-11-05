@@ -37,14 +37,15 @@ public class Application extends SpringBootServletInitializer implements Command
         return new TwitterTemplate(environment.getProperty("consumerKey"), environment.getProperty("consumerSecret"), environment.getProperty("accessToken"), environment.getProperty("accessTokenSecret"));
     }
 
-    // Put your logic here.
     @Override
     public void run(String... args) throws Exception {
+        //clear console screen
+        System.out.print("\033[H\033[2J");
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter something : ");
+        System.out.print("Search something : ");
         String keyword = scanner.nextLine();
         scanner.close();
-    twitterCacheService.minuteScheduler(keyword);
+        twitterCacheService.minuteScheduler(keyword);
     }
 
 } 
