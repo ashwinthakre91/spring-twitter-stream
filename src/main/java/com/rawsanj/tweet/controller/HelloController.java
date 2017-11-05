@@ -1,18 +1,12 @@
 package com.rawsanj.tweet.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.social.connect.ConnectionRepository;
-import org.springframework.social.twitter.api.Place;
 import org.springframework.social.twitter.api.SearchParameters;
 import org.springframework.social.twitter.api.SearchResults;
 import org.springframework.social.twitter.api.Tweet;
-import org.springframework.social.twitter.api.Twitter;
-import org.springframework.social.twitter.api.impl.GeoTemplate;
 import org.springframework.social.twitter.api.impl.TwitterTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -21,9 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.client.RestTemplate;
 
-import com.rawsanj.tweet.service.StreamService;
+import com.rawsanj.tweet.serviceImpl.StreamService;
 
 @Controller
 @Component
@@ -44,12 +37,12 @@ public class HelloController {
     @RequestMapping(value = "tweet",method=RequestMethod.GET)
     public String searchTwitter(Model model, @RequestParam String search) {
     	
-    	int count = 200;
+    	int count = 1;
     	
         SearchResults results = twitterTemplate.searchOperations().search(
         	    new SearchParameters(search)
         	        .resultType(SearchParameters.ResultType.RECENT)
-        	        .count(count));
+                .count(count));
         
         List<Tweet> tweets = results.getTweets();        
         model.addAttribute("tweets", tweets);

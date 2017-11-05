@@ -1,4 +1,4 @@
-package com.rawsanj.tweet.service;
+package com.rawsanj.tweet.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +14,6 @@ import org.springframework.social.twitter.api.StreamListener;
 import org.springframework.social.twitter.api.StreamWarningEvent;
 import org.springframework.social.twitter.api.Tweet;
 import org.springframework.social.twitter.api.Twitter;
-import org.springframework.social.twitter.api.UserStreamParameters;
-import org.springframework.social.twitter.api.UserStreamParameters.WithOptions;
-import org.springframework.social.twitter.api.impl.TwitterTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 

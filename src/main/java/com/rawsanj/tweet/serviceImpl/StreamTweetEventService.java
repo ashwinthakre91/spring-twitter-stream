@@ -1,4 +1,4 @@
-package com.rawsanj.tweet.service;
+package com.rawsanj.tweet.serviceImpl;
 
 import java.io.IOException;
 import java.util.ArrayList;
