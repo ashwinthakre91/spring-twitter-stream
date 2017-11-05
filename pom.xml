@@ -37,7 +37,7 @@
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<start-class>com.rawsanj.tweet.Application</start-class>
+		<start-class>com.tweet.Application</start-class>
 	</properties>
 
     <build>

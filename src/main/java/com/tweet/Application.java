@@ -1,7 +1,7 @@
-package com.rawsanj.tweet;
+package com.tweet;
 
 
-import com.rawsanj.tweet.service.TwitterCacheService;
+import com.tweet.service.TwitterCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,7 +36,6 @@ public class Application extends SpringBootServletInitializer implements Command
     TwitterTemplate getTwtTemplate(){
         return new TwitterTemplate(environment.getProperty("consumerKey"), environment.getProperty("consumerSecret"), environment.getProperty("accessToken"), environment.getProperty("accessTokenSecret"));
     }
-
 
     // Put your logic here.
     @Override

@@ -1,7 +1,6 @@
-package com.rawsanj.tweet.serviceImpl;
+package com.tweet.serviceImpl;
 
-import com.rawsanj.tweet.service.TwitterCacheService;
-import com.rawsanj.tweet.util.MostRecentlyUsedMap;
+import com.tweet.service.TwitterCacheService;
 import org.springframework.social.twitter.api.SearchParameters;
 import org.springframework.social.twitter.api.SearchResults;
 import org.springframework.social.twitter.api.Tweet;
@@ -13,17 +12,15 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Service
-public class TwitterCacheServiceImpl implements TwitterCacheService{
+public class TwitterCacheServiceImpl implements TwitterCacheService {
     private TwitterTemplate twitterTemplate;
-    private StreamService streamService;
     Map<String, Integer> cacheWords;
     String mostRecentWord;
     Timer timer;
 
     @Inject
-    public TwitterCacheServiceImpl(StreamService streamService, TwitterTemplate twitterTemplate) {
+    public TwitterCacheServiceImpl(TwitterTemplate twitterTemplate) {
 
-        this.streamService = streamService;
         this.twitterTemplate=twitterTemplate;
         this.mostRecentWord=null;
         this.cacheWords = new ConcurrentHashMap<String, Integer>(10);
