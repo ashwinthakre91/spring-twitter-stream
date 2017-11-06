@@ -1,4 +1,4 @@
-package com.rawsanj.tweet.serviceImpl;
+package com.tweet.serviceImpl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,6 @@
-package com.rawsanj.tweet.serviceImpl;
+package com.tweet.serviceImpl;
 
-import com.rawsanj.tweet.service.TwitterCacheService;
-import com.rawsanj.tweet.util.MostRecentlyUsedMap;
+import com.tweet.service.TwitterCacheService;
 import org.springframework.social.twitter.api.SearchParameters;
 import org.springframework.social.twitter.api.SearchResults;
 import org.springframework.social.twitter.api.Tweet;

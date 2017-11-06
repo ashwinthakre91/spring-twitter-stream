@@ -1,8 +1,8 @@
-package com.rawsanj.tweet;
+package com.tweet;
 
 
-import com.rawsanj.tweet.service.TwitterCacheService;
-import com.rawsanj.tweet.serviceImpl.StreamService;
+import com.tweet.service.TwitterCacheService;
+import com.tweet.serviceImpl.StreamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

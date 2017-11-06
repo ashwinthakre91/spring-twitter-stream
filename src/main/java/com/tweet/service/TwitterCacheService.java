@@ -1,4 +1,4 @@
-package com.rawsanj.tweet.service;
+package com.tweet.service;
 
 public interface TwitterCacheService {
     void minuteScheduler(String keyword);
