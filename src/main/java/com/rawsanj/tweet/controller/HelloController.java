@@ -1,9 +1,6 @@
 package com.rawsanj.tweet.controller;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
+import com.rawsanj.tweet.serviceImpl.StreamService;
 import org.springframework.social.twitter.api.SearchParameters;
 import org.springframework.social.twitter.api.SearchResults;
 import org.springframework.social.twitter.api.Tweet;
@@ -11,12 +8,12 @@ import org.springframework.social.twitter.api.impl.TwitterTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.rawsanj.tweet.serviceImpl.StreamService;
+import javax.inject.Inject;
+import java.util.List;
 
 @Controller
 @Component
@@ -70,11 +67,11 @@ public class HelloController {
         return "search";
     }
     
-    @RequestMapping("/stream/{time}")
-    public String streamTweet(@PathVariable int time, Model model) throws InterruptedException{
+    @RequestMapping("/stream")
+    public String streamTweet(Model model) throws InterruptedException{
         
-        Model returnedmodel = streamService.streamApi(model, time);
-        model = returnedmodel;
+        /*Model returnedmodel = streamService.streamApi(model);
+        model = returnedmodel;*/
 
         return "stream";
     }
