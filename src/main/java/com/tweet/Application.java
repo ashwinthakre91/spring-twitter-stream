@@ -3,6 +3,7 @@ package com.tweet;
 
 import com.tweet.service.TwitterCacheService;
 import com.tweet.serviceImpl.StreamService;
+import com.tweet.serviceImpl.StreamService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +27,9 @@ public class Application extends SpringBootServletInitializer implements Command
 
     @Autowired
     StreamService streamService;
+
+    @Autowired
+    StreamService2 streamService2;
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -49,7 +53,8 @@ public class Application extends SpringBootServletInitializer implements Command
         System.out.print("Search something : ");
         String keyword = scanner.nextLine();
         scanner.close();
-        streamService.streamApi(keyword);
+        //streamService.streamApi(keyword);
+        streamService2.streamApi(keyword);
     //twitterCacheService.minuteScheduler(keyword);
     }
 
